@@ -1,4 +1,4 @@
-//import 'dart:async';
+import 'dart:async';
 import 'dart:io';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:appanalpha/controller.dart';
@@ -57,8 +57,10 @@ class _InformationState extends State<Information> {
                     for (var e in list) {
                       print('***');
                       print(e);
-                      await controller
-                          .playSong("assets/audio/${Model.lang}/$e.aac");
+                      Timer(const Duration(seconds: 5), () {
+                        controller
+                            .playSong("assets/audio/${Model.lang}/$e.aac");
+                      });
                     }
                   },
                 ),
@@ -91,8 +93,10 @@ class _InformationState extends State<Information> {
                     onTap: () async {
                       await controller
                           .playSong("assets/audio/${Model.lang}/appeler.aac");
-                      //controller.playSong(
-                      //    "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                      Timer(const Duration(seconds: 5), () {
+                        controller.playSong(
+                            "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                      });
                       showDialog(
                           context: context,
                           builder: (context) {
@@ -153,8 +157,10 @@ class _InformationState extends State<Information> {
                       onPressed: () async {
                         await controller.playSong(
                             "assets/audio/${Model.lang}/supprimer.aac");
-                        //controller.playSong(
-                        //    "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                        Timer(const Duration(seconds: 5), () {
+                          controller.playSong(
+                              "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                        });
                         showDialog(
                             context: context,
                             builder: (context) {
@@ -203,8 +209,6 @@ class _InformationState extends State<Information> {
                       })),
               ElevatedButton.icon(
                   onPressed: () async {
-                    //await controller
-                    //    .playSong("assets/audio/${Model.lang}/mo.aac");
                     controller.playSong(
                         "assets/audio/${Model.lang}/vert_ou_rouge.aac");
                     showDialog(

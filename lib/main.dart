@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     // TODO: implement initState
-    //controller.playSong("assets/audio/${Model.lang}/bienvenue.aac");
+    controller.playSong("assets/audio/${Model.lang}/bienvenue.aac");
     super.initState();
   }
 

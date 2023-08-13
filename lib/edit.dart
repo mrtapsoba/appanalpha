@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'dart:async';
 //import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 import 'package:appanalpha/model.dart';
 import 'package:flutter/material.dart';
@@ -109,8 +109,10 @@ class _EditPageState extends State<EditPage> {
             onTap: () async {
               await controller
                   .playSong("assets/audio/${Model.lang}/ajouter_photo.aac");
-              //controller
-              //    .playSong("assets/audio/${Model.lang}/vert_ou_rouge.aac");
+              Timer(const Duration(seconds: 5), () {
+                      controller.playSong(
+                          "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                    });
               showDialog(
                   context: context,
                   builder: (context) {
@@ -201,8 +203,10 @@ class _EditPageState extends State<EditPage> {
                     onPressed: () async {
                       await controller
                           .playSong("assets/audio/${Model.lang}/supprimer.aac");
-                      //controller.playSong(
-                      //    "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                      Timer(const Duration(seconds: 5), () {
+                      controller.playSong(
+                          "assets/audio/${Model.lang}/vert_ou_rouge.aac");
+                    });
                       showDialog(
                           context: context,
                           builder: (context) {
