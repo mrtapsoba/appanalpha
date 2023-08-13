@@ -51,7 +51,7 @@ class _InformationState extends State<Information> {
                 width: 100,
                 child: IconButton(
                   icon: const Icon(Icons.volume_up, size: 50),
-                  onPressed: () async {
+                  onPressed: () {
                     var list = widget.contact['numero'].toString().split('');
                     print(list);
                     for (var e in list) {
